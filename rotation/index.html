@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loader</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            overflow: hidden;
+        }
+        .loader, .loader span {
+            width: 10em;
+            height: 10em;
+            border: 0.2em solid white;
+            border-radius: 1em;
+            position: absolute;
+            mix-blend-mode: screen;
+        }
+        .loader {
+            background-color: gold;
+            animation: rotating 2s linear infinite;
+        }
+        @keyframes rotating {
+            to {
+                transform: rotate(1turn);
+            }
+        }
+        .loader span {
+            animation: de-rotating 4s linear infinite;
+        }
+        @keyframes de-rotating {
+            from, to {
+                transform: rotate(0deg) scale(0.5);
+            }
+        }
+        .loader span:nth-child(1) {
+            top: 5em;
+            left: 5em;
+            background-color: dodgerblue;
+        }
+        .loader span:nth-child(2) {
+            top: 5em;
+            right: 5em;
+            background-color: hotpink;
+        }
+        .loader span:nth-child(3) {
+            bottom:5em;
+            left: 5em;
+            background-color: mediumpurple;
+        }
+        .loader span:nth-child(4) {
+            bottom: 5em;
+            right: 5em;
+            background-color: rgb(15, 192, 15);
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>
